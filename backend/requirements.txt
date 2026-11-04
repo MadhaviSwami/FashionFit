@@ -1,0 +1,10 @@
+Flask>=3.0,<4
+flask-cors>=4.0
+python-dotenv>=1.0
+Pillow>=10.0
+opencv-python-headless>=4.8,<5
+numpy>=1.26
+requests>=2.31
+# Optional: only needed when TRYON_PROVIDER=huggingface
+gradio_client>=1.3
+truststore>=0.9
