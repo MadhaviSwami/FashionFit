@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  --color-ink: #111111;
+  --color-blush-50: #fff5f8;
+  --color-blush-100: #fde8ef;
+  --color-blush-200: #f9d0dd;
+  --color-blush-300: #f4b6c6;
+  --color-blush-400: #ec8fa9;
+  --color-blush-500: #df6a8d;
+  --color-blush-600: #c44d72;
+  --color-blush-700: #9f3a5a;
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); }
+    50% { transform: translateY(-12px) rotate(var(--tilt, 0deg)); }
+  }
+}
+
+/* ---- Animated logo ------------------------------------------------- */
+.logo-anim .logo-top {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: logo-sweep 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.logo-anim .logo-stem {
+  transform-box: fill-box;
+  transform-origin: bottom left;
+  animation: logo-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+.logo-anim .logo-leaf-1,
+.logo-anim .logo-leaf-2 {
+  transform-box: fill-box;
+  transform-origin: left bottom;
+  animation: logo-unfold 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.logo-anim .logo-leaf-1 { animation-delay: 0.25s; }
+.logo-anim .logo-leaf-2 { animation-delay: 0.35s; }
+.logo-anim .logo-letter {
+  animation: logo-letter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes logo-sweep {
+  from { opacity: 0; transform: translateX(-30%) scaleX(0.3); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes logo-rise {
+  from { opacity: 0; transform: translateY(35%) scaleY(0.5); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes logo-unfold {
+  from { opacity: 0; transform: rotate(-35deg) scale(0.4); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes logo-letter {
+  from { opacity: 0; transform: translateY(60%); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-anim .logo-top,
+  .logo-anim .logo-stem,
+  .logo-anim .logo-leaf-1,
+  .logo-anim .logo-leaf-2,
+  .logo-anim .logo-letter {
+    animation: none;
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+  h1, h2, h3 { @apply font-display; }
+}
+
+@layer components {
+  .btn, .btn-primary, .btn-pink, .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
+      transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-blush-500 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer;
+  }
+  .btn-primary { @apply bg-ink text-white hover:bg-blush-600 hover:shadow-lg hover:shadow-blush-200 disabled:hover:bg-ink disabled:hover:shadow-none; }
+  .btn-pink { @apply bg-blush-300 text-ink hover:bg-blush-400 hover:shadow-lg hover:shadow-blush-200; }
+  .btn-outline { @apply border border-ink/15 bg-white text-ink hover:border-ink hover:bg-blush-50; }
+  .btn-sm { @apply px-4 py-2 text-xs; }
+
+  .input {
+    @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition
+      placeholder:text-ink/40 focus:border-blush-500 focus:ring-4 focus:ring-blush-100;
+  }
+  .input-error { @apply border-red-400 focus:border-red-500 focus:ring-red-100; }
+  .label { @apply mb-1.5 block text-sm font-medium text-ink/80; }
+  .card { @apply rounded-3xl border border-ink/5 bg-white shadow-sm; }
+  .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.2em] text-blush-600; }
+  .chip {
+    @apply rounded-full border border-ink/10 px-4 py-2 text-sm font-medium transition cursor-pointer
+      hover:border-ink/40;
+  }
+  .chip-active { @apply border-ink bg-ink text-white hover:border-ink; }
+}

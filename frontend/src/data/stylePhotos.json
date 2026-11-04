@@ -1,0 +1,116 @@
+{
+  "offShoulderTop": {
+    "src": "/style-guide/free/offShoulderTop.jpg",
+    "artist": "Joshue McKnight",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Woman_smiling_pink_shirt2.jpg"
+  },
+  "highNeckTop": {
+    "src": "/style-guide/free/highNeckTop.jpg",
+    "artist": "Yosarian",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tamang_woman.jpg"
+  },
+  "puffSleeveTop": {
+    "src": "/style-guide/free/puffSleeveTop.jpg",
+    "artist": "Pyelno",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vintage_Back-Buttoned_Satin_Blouse_%26_Leather_Pencil_Skirt.jpg"
+  },
+  "cropTop": {
+    "src": "/style-guide/free/cropTop.jpg",
+    "artist": "Jocelyn Saurini",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Woman_in_a_White_Crop_Top.jpg"
+  },
+  "bodyconTop": {
+    "src": "/style-guide/free/bodyconTop.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Woman_drinks_coffee_on_a_balcony.jpg"
+  },
+  "anarkali": {
+    "src": "/style-guide/free/anarkali.jpg",
+    "artist": "Brendan",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Yogita_Grover,_Well_Groomed_Fashion_Show_(5420850558).jpg"
+  },
+  "straightKurti": {
+    "src": "/style-guide/free/straightKurti.jpg",
+    "artist": "AddictionBazaar",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shalwar_kameez_(1710606).jpg"
+  },
+  "kalidar": {
+    "src": "/style-guide/free/kalidar.jpg",
+    "artist": "Wolfgang Sauber",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:MFM_-_Angrakha.jpg"
+  },
+  "chiffonSaree": {
+    "src": "/style-guide/free/chiffonSaree.jpg",
+    "artist": "Anaya designer",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Red_saree_look_for_girl.jpg"
+  },
+  "openPalluSaree": {
+    "src": "/style-guide/free/openPalluSaree.jpg",
+    "artist": "Only Paithani",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wedding_saree_(1050936).jpg"
+  },
+  "broadBorderSaree": {
+    "src": "/style-guide/free/broadBorderSaree.jpg",
+    "artist": "Pattupleats",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:South_Asian_Bridal_Stying_by_pattupleats.jpg"
+  },
+  "stiffBroadSaree": {
+    "src": "/style-guide/free/stiffBroadSaree.jpg",
+    "artist": "Ekabhishek",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Saree_on_display_at_Dilli_Haat.JPG"
+  },
+  "bootcutJeans": {
+    "src": "/style-guide/free/bootcutJeans.jpg",
+    "artist": "Ellecid",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ellecid-Double-Twisted-Single-Twisted-and-Traditional-Jeans.jpg"
+  },
+  "palazzo": {
+    "src": "/style-guide/free/palazzo.jpg",
+    "artist": "Tobias ToMar Maier",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Golden_hour_to_sunset_-_2019-08-27_19-21_-_modelled_by_Marina_Daschner.jpg"
+  },
+  "straightJeans": {
+    "src": "/style-guide/free/straightJeans.jpg",
+    "artist": "Hadret",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Woman_in_red_tea-shirt_and_blue_jeans_in_Poland-17May2008.jpg"
+  },
+  "skinnyJeans": {
+    "src": "/style-guide/free/skinnyJeans.jpg",
+    "artist": "Pete Bellis petebellis",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skinny_Jeans_(Unsplash).jpg"
+  },
+  "alineSkirt": {
+    "src": "/style-guide/free/alineSkirt.jpg",
+    "artist": "Flickr user \"queen puff puff\"",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A-line_skirt.jpg"
+  },
+  "pencilSkirt": {
+    "src": "/style-guide/free/pencilSkirt.jpg",
+    "artist": "Lincoln Tailors",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skirt,_formal_(AM_2017.66.15-4).jpg"
+  },
+  "pleatedSkirt": {
+    "src": "/style-guide/free/pleatedSkirt.jpg",
+    "artist": "MP Sportswear",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skirt,_pleated_(AM_1999.107.242-6).jpg"
+  }
+}
