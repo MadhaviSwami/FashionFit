@@ -1,20 +1,35 @@
-# Fashion Fit — AI-Powered Virtual Try-On
+# Fashion Fit — AI Virtual Try-On & Body Shape Styling
 
-Fashion Fit is a responsive fashion styling website (nothing is sold here) where you can upload a photo (or take
-one with your camera), pick an outfit, and see an **AI-generated** image of yourself wearing it.
+Fashion Fit is a fashion styling website. Upload a photo (or take one with your camera), pick an outfit, and an
+AI model generates an image of you wearing it. It also has a body shape calculator that uses your measurements
+and height to suggest what to wear, with photo examples for tops, bottoms, kurtis and sarees.
 
-- **Frontend:** React 18 + Vite + Tailwind CSS 4 (JavaScript)
-- **Backend:** Python 3 + Flask, Pillow, OpenCV, SQLite
+Nothing is sold on the site. It's a styling tool, not a shop.
+
+- **Frontend:** React 18, Vite, Tailwind CSS 4
+- **Backend:** Python, Flask, Pillow, OpenCV, SQLite
 - **AI model:** [IDM-VTON](https://github.com/yisol/IDM-VTON), a diffusion-based virtual try-on model, called through
   the public Hugging Face Space (free) or Replicate (paid)
 
+## Screenshots
+
+| Home | Virtual try-on |
+|---|---|
+| ![Home page](docs/screenshots/home.png) | ![Virtual try-on page](docs/screenshots/try-on.png) |
+
+| Body shape + height result | Style guide (wear / avoid) |
+|---|---|
+| ![Body shape result](docs/screenshots/body-shape.png) | ![Style guide](docs/screenshots/style-guide.png) |
+
+<p align="center"><img src="docs/screenshots/mobile.png" alt="Home page on a phone" width="260"></p>
+
 ---
 
-## What works
+## Features
 
 | Feature | Status |
 |---|---|
-| Home page (hero, featured items, categories, how it works, footer) | Done |
+| Home page (hero, what you can do, how it works, footer) and animated logo | Done |
 | "Our outfits" in Virtual Try-On (the site owner's photos, listed in `frontend/src/data/tryOnGarments.js`), plus **upload your own clothing photo** to try on | Done |
 | Photo upload (drag & drop, type/size validation, EXIF rotation fix) | Done |
 | Camera capture (permission request, live preview, 3s timer, switch camera, retake, error messages) | Done |
@@ -25,12 +40,13 @@ one with your camera), pick an outfit, and see an **AI-generated** image of your
 | Sign up / log in (hashed passwords, signed tokens), profile, edit name, delete account | Done |
 | Try-on history (only with explicit opt-in; stores the result, never the original photo) | Done |
 | Body shape calculator following the "Dress for Your Body Shape - Indian Style Guide" handbook (7 women's and 5 men's shapes) with live silhouette, full saree / ethnic / office / casual / avoid advice and outfit picks. Runs in the browser, measurements never uploaded | Done |
+| Height advice: optional height (cm or ft + in) puts you in Petite / Average / Tall, shows tips for your height and marks style guide picks that suit it or need care. Women's groups follow the handbook; men's groups use common cut-offs (the handbook has no men's height section) | Done |
 | Style Handbook page (`/style-handbook`): measuring guide, shape patterns, styling principles, colour & skin tone, saree fabrics & drapes, blouse necklines, size notes, men's ethnic wear & fit checklist, cheat sheets | Done |
-| Visual style guide (tops, bottoms, kurtis, sarees: wear / avoid per body shape) with free-licence Wikimedia Commons photos (credited) and your own photos via `frontend/public/style-guide/my-photos/` (see the README.txt there) | Done (23 of 52 items have a photo so far) |
+| Visual style guide (tops, bottoms, kurtis, sarees: wear / avoid per body shape) with the site owner's photos in `frontend/public/style-guide/my-photos/` and free-licence Wikimedia Commons photos (credited). Click any photo to see it full size | Done (41 of 49 items have a photo so far) |
 | Contact form (validated, stored in SQLite), About, Privacy Policy, 404 page | Done |
 | Responsive layout (mobile, tablet, desktop) | Done |
 
-### Honest limitations
+### Limitations
 
 - **The free Hugging Face Space only supports upper-body garments** (tees, shirts, hoodies, blazers, kurtas,
   blouses). With that provider, bottoms and dresses are greyed out in the try-on picker and the reason is shown.
@@ -54,13 +70,14 @@ fashion fit/
 ├── frontend/                    React + Vite + Tailwind app
 │   ├── public/style-guide/      Style guide photos; my-photos/ also holds the try-on outfits
 │   ├── src/
-│   │   ├── components/          Navbar, Footer, ProductCard, CameraCapture, PhotoInput,
-│   │   │                        CompareSlider, GarmentPicker, Alert, ...
+│   │   ├── components/          Navbar, Footer, Logo, CameraCapture, PhotoInput, CompareSlider,
+│   │   │                        GarmentPicker, StyleGuide, PhotoLightbox, ShapeAdvice, ...
 │   │   ├── pages/               Home, TryOn, BodyShape, StyleHandbook, Login, Signup,
-│   │   │                        Profile, Favorites, About, Contact, Privacy, NotFound
+│   │   │                        Profile, About, Contact, Privacy, NotFound
 │   │   ├── context/             AuthContext (login)
-│   │   ├── services/            api.js, tryOnService.js, authService.js, userDataService.js, ...
-│   │   ├── data/                products.json (sample garments), bodyShape.js, styleGuide.js, styleHandbook.js
+│   │   ├── services/            api.js, tryOnService.js, authService.js, storage.js, ...
+│   │   ├── data/                tryOnGarments.js (try-on outfits), bodyShape.js, height.js,
+│   │   │                        styleGuide.js, styleHandbook.js, stylePhotos.json
 │   │   ├── App.jsx              Routes
 │   │   └── main.jsx             Entry point
 │   ├── vite.config.js           Dev server on port 5180, forwards /api to Flask
